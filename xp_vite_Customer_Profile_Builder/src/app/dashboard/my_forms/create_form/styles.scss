@@ -1,0 +1,250 @@
+$form-padding: 20px;
+$section-padding: 15px;
+$field-padding: 10px;
+$button-padding: 5px 10px;
+$border-color: #ddd;
+$hover-color: #f5f5f5;
+$button-bg: #007bff;
+$button-color: #fff;
+$button-hover-bg: #0056b3;
+$input-border-radius: 5px;
+$input-border: 1px solid $border-color;
+$input-padding: $field-padding;
+$input-margin-bottom: $field-padding;
+
+.form-container {
+    min-height: 110vh;
+
+    h1 {
+        text-align: center;
+        margin-bottom: $section-padding;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: $form-padding;
+        border: 1px solid $border-color;
+        background-color: #fafafa;
+        max-width: 800px;
+        margin: 0 auto;
+
+        .section {
+            padding: $section-padding;
+            border: 1px solid $border-color;
+            border-radius: 10px;
+            margin-bottom: $section-padding;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-top: 2rem;
+
+            .sectionsList {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                transition: max-height .6s ease-in-out,
+                    padding-top .2s ease-in-out,
+                    opacity .2s ease-in-out
+            }
+
+            input[type="checkbox"] {
+                display: none;
+            }
+
+            input[type="checkbox"]:checked {
+                &~label.toggler i {
+                    transform: translateX(1.9rem) rotateZ(180deg);
+                }
+
+                &~.sectionsList {
+                    padding-top: 1rem;
+                    opacity: 1;
+                    max-height: calc(100vh * 12);
+                }
+            }
+
+
+            .section-title {
+                margin-bottom: 1rem;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            .field {
+                position: relative;
+                padding: 4px;
+                border-radius: 4px;
+                border: 2px dashed $border-color;
+
+                .flex-column {
+                    margin-top: 1rem;
+                }
+
+                .flex {
+                    margin-top: 2rem;
+                    margin-bottom: 1rem;
+                    border: 1px solid #A9A9A9;
+                    padding: 1rem .5rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    border-radius: 4px;
+                    gap: 1rem;
+                    align-items: flex-end;
+                    position: relative;
+
+                    .flex-column {
+                        margin: 0;
+                    }
+
+                    >div,
+                    >button {
+                        flex-basis: calc(50% - 1rem);
+                    }
+                }
+
+                hr {
+                    height: 9px;
+                    margin-top: .5rem;
+                    border-radius: 10px;
+                    background: #e1e1e1;
+                    border: none;
+                }
+            }
+
+            .value {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: $field-padding;
+            }
+
+            .remove-button {
+                background-color: transparent;
+                border: none;
+                color: red;
+                cursor: pointer;
+                padding: $button-padding;
+
+                &:hover {
+                    background-color: $hover-color;
+                }
+            }
+        }
+
+        .legend {
+            position: absolute;
+            top: 0;
+            left: 1rem;
+            padding: 4px 10px;
+            transform: translateY(-50%);
+            background-color: #fff;
+            font-size: .9rem;
+            border-radius: 6px;
+            font-weight: 700;
+            border: 1px solid #e5e1e1;
+            opacity: 1;
+
+            &.right {
+                left: unset;
+                right: 1rem;
+            }
+
+            &.delete {
+                background-color: #FF9800;
+                color: #fff;
+                transition: background-color .2s ease-in-out;
+
+                &:hover {
+                    background-color: red;
+                }
+            }
+        }
+
+        .toggler {
+            position: sticky;
+            top: 50%;
+            right: 0;
+            font-size: 1.5rem;
+            text-align: right;
+            width: max-content;
+            align-self: flex-end;
+
+            i {
+                width: 28px;
+                height: 28px;
+                padding: 3px 2px;
+                border-radius: 50%;
+                transition: transform .2s ease-in-out;
+                transform-origin: center center;
+                background-color: #FFC107;
+                transform: translateX(1.9rem);
+
+            }
+        }
+    }
+
+    button {
+        padding: 4px 15px;
+    }
+
+    .addBtn {
+        margin-top: 1rem;
+        background-color: #07203b;
+        color: #fff;
+        border: none;
+        width: max-content;
+        border-radius: 4px;
+        padding: 10px 18px;
+    }
+
+    .flex-column {
+        label {
+            font-family: 'Popins', sans-serif;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+    }
+
+    input {
+        margin-top: .25rem;
+        font-family: 'Popins', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        border: 2px solid #A9A9A9;
+        padding: 8px 10px;
+        letter-spacing: .2px;
+        outline: none;
+        width: 100%;
+
+        &:hover,
+        &:focus-within {
+            border: 2px solid #844AFF;
+        }
+    }
+
+    input[type="checkbox"] {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: max-content;
+        transform: translateY(-50%);
+    }
+
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+
+        button {
+            padding: 4px 15px;
+        }
+    }
+
+}

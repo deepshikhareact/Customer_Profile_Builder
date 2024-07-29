@@ -1,0 +1,98 @@
+.my_forms {
+    padding: 1rem;
+
+    .header {
+        padding: 2rem 0px;
+
+        .title {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+
+            h3 {
+                font-size: var(--font-lg);
+            }
+
+            .create {
+                color: #000;
+                text-decoration: none;
+                border: none;
+                padding: 4px 15px;
+                font-weight: 800;
+                background-color: var(--star-color);
+                border-radius: 6px;
+            }
+        }
+    }
+
+    .link_btn {
+        font-size: .8rem;
+        border: none;
+        padding: 4px 10px;
+        font-weight: 600;
+        color: #000;
+        background-color: #efefef;
+        border: 1px solid #000000;
+        text-decoration: none;
+        border-radius: 6px;
+    }
+
+    .ul {
+        display: flex;
+        max-width: 600px;
+        margin: 0 auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: flex-start;
+        list-style: none;
+        gap: 2rem;
+
+        li {
+            padding: 1rem;
+            border: 2px solid rgba(79, 79, 79, 0.28);
+            border-radius: 10px;
+            min-width: 200px;
+            position: relative;
+            transition: border-color .2s ease-in-out, background-color .2s ease-in-out;
+
+            p {
+                position: absolute;
+                right: 1rem;
+                top: .25rem;
+                font-size: .7rem;
+                text-align: end;
+                color: rgba(79, 79, 79, 0.98);
+            }
+
+            &:hover {
+                background-color: #f9f9f9;
+                border-color: #000;
+            }
+
+            .top {
+                display: flex;
+                gap: 1rem;
+                padding-top: 0.5rem;
+
+
+                .info {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                    justify-content: space-between;
+                }
+            }
+
+            .action {
+                padding-top: 0.5rem;
+                display: flex;
+                gap: .5rem;
+                align-items: center;
+                justify-content: flex-end;
+            }
+        }
+    }
+}
